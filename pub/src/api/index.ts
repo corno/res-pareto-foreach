@@ -1,2 +1,2 @@
-export * from "./glossary/types.generated"
+export * from "./glossary"
 export * from "./api.generated"
