@@ -10,9 +10,9 @@ export const $: mproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "forEach functions for dictionaries and arrays",
     'license': "ISC",
-    
+
     'dependencies': d({
-        //"glo-pareto-common": {},
+        "res-pareto-collation": {},
     }),
     'type': ['resource', {
         'definition': api,
