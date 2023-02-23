@@ -1,8 +1,8 @@
 
 
-import * as api from "../api"
+import { CcreateDictionaryForEach } from "../api"
 
-export const $$: api.CcreateDictionaryForEach = ($d) => {
+export const $$:CcreateDictionaryForEach = ($d) => {
     return ($, $i) => {
         const compare = (a: string, b: string) => $d.compare({ a: a, b: b })
 

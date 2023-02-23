@@ -1,8 +1,10 @@
 import * as pi from 'pareto-core-internals'
 
-import * as mapi from "../api"
 
-export const $$: mapi.CenrichedArrayForEach = ($, $i) => {
+
+import { CenrichedArrayForEach } from "../api"
+
+export const $$:CenrichedArrayForEach = ($, $i) => {
     let length = $.__getLength()
 
     if (length === 0) {

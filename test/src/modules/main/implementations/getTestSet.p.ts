@@ -2,14 +2,15 @@ import * as pd from 'pareto-core-dev'
 import * as ps from 'pareto-core-state'
 import * as pa from 'pareto-core-async'
 
-import * as mapi from "../api"
-import * as mtst from "lib-pareto-test"
-import * as mpub from "../../../../../pub"
+import * as gtest from "lib-pareto-test"
+import * as gpub from "../../../../../pub"
 
 // import * as pubTypes from "../../../../pub/dist/submodules/public"
 // import * as pubPrivate from "../../../../pub/dist/submodules/private"
 
-export const $$: mapi.CgetTestSet = ($) => {
+import { CgetTestSet } from "../api"
+
+export const $$:CgetTestSet = ($) => {
 
 
     // pub.$a.createTestProgram(null, {
@@ -42,7 +43,7 @@ export const $$: mapi.CgetTestSet = ($) => {
     //     pr.wrapRawArray(["foo"])
     // )
 
-    const builder = ps.createUnsafeDictionaryBuilder<mtst.T.TestElement>()
+    const builder = ps.createUnsafeDictionaryBuilder<gtest.T.TestElement>()
     function createTest(name: string, actual: string, expected: string) {
         builder.add(name, {
             type: ['test', {

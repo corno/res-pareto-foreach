@@ -1,8 +1,10 @@
 import * as pi from 'pareto-core-internals'
 
-import * as mapi from "../api"
 
-export const $$: mapi.CcreateEnrichedDictionaryForEach = ($d) => {
+
+import { CcreateEnrichedDictionaryForEach } from "../api"
+
+export const $$:CcreateEnrichedDictionaryForEach = ($d) => {
     return ($, $i) => {
         let length = pi.cc($, () => {
             let count = 0
