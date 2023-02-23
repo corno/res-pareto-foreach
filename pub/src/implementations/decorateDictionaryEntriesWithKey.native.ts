@@ -1,6 +1,6 @@
-import * as api from "../api"
+import * as mapi from "../api"
 
-export const $$: api.CdecorateDictionaryEntriesWithKey = ($) => {
+export const $$: mapi.CdecorateDictionaryEntriesWithKey = ($) => {
     return $.__mapWithKey(($, key) => {
         return {
             key: key,
