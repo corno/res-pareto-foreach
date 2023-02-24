@@ -1,22 +1,22 @@
 import * as pt from 'pareto-core-types'
 
-import * as glo from "./glossary"
+import * as gglo from "./glossary"
 
-import * as mcollation from "res-pareto-collation"
+import * as gcollation from "res-pareto-collation"
 
-export type CarrayForEach = glo.FArrayForEach
+export type CarrayForEach = gglo.FArrayForEach
 
 export type CcreateDictionaryForEach = ($d: {
-    readonly 'compare': mcollation.FIsABeforeB
-}) => glo.FDictionaryForEach
+    readonly 'compare': gcollation.FIsABeforeB
+}) => gglo.FDictionaryForEach
 
 export type CcreateEnrichedDictionaryForEach = ($d: {
-    readonly 'compare': mcollation.FIsABeforeB
-}) => glo.FEnrichedDictionaryForEach
+    readonly 'compare': gcollation.FIsABeforeB
+}) => gglo.FEnrichedDictionaryForEach
 
-export type CdecorateDictionaryEntriesWithKey = glo.FDecorateDictionaryEntriesWithKey
+export type CdecorateDictionaryEntriesWithKey = gglo.FDecorateDictionaryEntriesWithKey
 
-export type CenrichedArrayForEach = glo.FEnrichedArrayForEach
+export type CenrichedArrayForEach = gglo.FEnrichedArrayForEach
 
 export type API = {
     arrayForEach: CarrayForEach
