@@ -9,7 +9,7 @@ import { $ as api } from "./api.data"
 export const $: gproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "forEach functions for dictionaries and arrays",
-    'license': "ISC",
+    'license': "TBD",
 
     'dependencies': d({
         "res-pareto-collation": {},
