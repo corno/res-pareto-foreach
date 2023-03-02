@@ -25,7 +25,7 @@ const d = pd.d
 
 export const $: gglossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({
-        "Type": {},
+        "Type": null,
     }),
     'imports': d({
         //"common": "glo-pareto-common",
