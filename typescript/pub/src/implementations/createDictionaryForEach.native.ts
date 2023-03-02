@@ -1,6 +1,6 @@
 
 
-import { CcreateDictionaryForEach } from "../api"
+import { CcreateDictionaryForEach } from "../definition/api.generated"
 
 export const $$:CcreateDictionaryForEach = ($d) => {
     return ($, $i) => {

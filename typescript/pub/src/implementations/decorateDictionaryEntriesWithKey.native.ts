@@ -1,6 +1,6 @@
 
 
-import { CdecorateDictionaryEntriesWithKey } from "../api"
+import { CdecorateDictionaryEntriesWithKey } from "../definition/api.generated"
 
 export const $$:CdecorateDictionaryEntriesWithKey = ($) => {
     return $.__mapWithKey(($, key) => {

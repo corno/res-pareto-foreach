@@ -2,7 +2,7 @@ import * as pi from 'pareto-core-internals'
 
 
 
-import { CenrichedArrayForEach } from "../api"
+import { CenrichedArrayForEach } from "../definition/api.generated"
 
 export const $$:CenrichedArrayForEach = ($, $i) => {
     let length = $.__getLength()
