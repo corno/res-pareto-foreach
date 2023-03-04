@@ -27,9 +27,6 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({
         "Type": null,
     }),
-    'imports': d({
-        //"common": "glo-pareto-common",
-    }),
     'types': d({
         "Array": type(array(glossaryParameter("Type"))),
         "Dictionary": type(dictionary(glossaryParameter("Type"))),
