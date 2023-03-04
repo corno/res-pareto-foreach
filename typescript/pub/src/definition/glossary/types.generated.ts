@@ -5,69 +5,69 @@ export namespace T {
     
     export namespace AnnotatedElement {
         
-        export type isFirst<GPType> = boolean
+        export type isFirst<GType> = boolean
         
-        export type isLast<GPType> = boolean
+        export type isLast<GType> = boolean
         
-        export type value<GPType> = GPType
+        export type value<GType> = GType
     }
     
-    export type AnnotatedElement<GPType> = {
+    export type AnnotatedElement<GType> = {
         readonly 'isFirst': boolean
         readonly 'isLast': boolean
-        readonly 'value': GPType
+        readonly 'value': GType
     }
     
     export namespace AnnotatedEntry {
         
-        export type isFirst<GPType> = boolean
+        export type isFirst<GType> = boolean
         
-        export type isLast<GPType> = boolean
+        export type isLast<GType> = boolean
         
-        export type key<GPType> = string
+        export type key<GType> = string
         
-        export type value<GPType> = GPType
+        export type value<GType> = GType
     }
     
-    export type AnnotatedEntry<GPType> = {
+    export type AnnotatedEntry<GType> = {
         readonly 'isFirst': boolean
         readonly 'isLast': boolean
         readonly 'key': string
-        readonly 'value': GPType
+        readonly 'value': GType
     }
     
     export namespace Array {
         
-        export type A<GPType> = GPType
+        export type T<GType> = GType
     }
     
-    export type Array<GPType> = pt.Array<GPType>
+    export type Array<GType> = pt.Array<GType>
     
     export namespace Dictionary {
         
-        export type D<GPType> = GPType
+        export type D<GType> = GType
     }
     
-    export type Dictionary<GPType> = pt.Dictionary<GPType>
+    export type Dictionary<GType> = pt.Dictionary<GType>
     
     export namespace KeyValueDictionary {
         
-        export type D<GPType> = T.KeyValuePair<GPType>
+        export type D<GType> = T.KeyValuePair<GType>
     }
     
-    export type KeyValueDictionary<GPType> = pt.Dictionary<T.KeyValuePair<GPType>>
+    export type KeyValueDictionary<GType> = pt.Dictionary<T.KeyValuePair<GType>>
     
     export namespace KeyValuePair {
         
-        export type key<GPType> = string
+        export type key<GType> = string
         
-        export type value<GPType> = GPType
+        export type value<GType> = GType
     }
     
-    export type KeyValuePair<GPType> = {
+    export type KeyValuePair<GType> = {
         readonly 'key': string
-        readonly 'value': GPType
+        readonly 'value': GType
     }
     
-    export type Value<GPType> = GPType
+    export type Value<GType> = GType
 }

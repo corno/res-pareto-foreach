@@ -1,8 +1,8 @@
 
 
-import { CarrayForEach } from "../definition/api.generated"
+import { arrayForEach } from "../definition/api.generated"
 
-export const $$:CarrayForEach = ($, $i) => {
+export const $$: arrayForEach = ($, $i) => {
     $.__forEach(($) => {
         $i($)
     })

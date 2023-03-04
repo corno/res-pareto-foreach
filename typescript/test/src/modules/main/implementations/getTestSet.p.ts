@@ -8,9 +8,9 @@ import * as gpub from "../../../../../pub"
 // import * as pubTypes from "../../../../pub/dist/submodules/public"
 // import * as pubPrivate from "../../../../pub/dist/submodules/private"
 
-import { CgetTestSet } from "../definition/api.generated"
+import { getTestSet } from "../definition/api.generated"
 
-export const $$:CgetTestSet = ($) => {
+export const $$: getTestSet = ($) => {
 
     // pub.$a.createTestProgram(null, {
     //     getTestSet: () => {

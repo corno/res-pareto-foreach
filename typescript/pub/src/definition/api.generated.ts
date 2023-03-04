@@ -1,26 +1,26 @@
 import * as pt from 'pareto-core-types'
 
-import * as gcollation from "res-pareto-collation"
-import * as gthis from "./glossary"
+import * as g_collation from "res-pareto-collation"
+import * as g_this from "./glossary"
 
-export type CarrayForEach = gthis.FArrayForEach
+export type arrayForEach = g_this.F.ArrayForEach
 
-export type CcreateDictionaryForEach = ($d: {
-    readonly 'compare': gcollation.FIsABeforeB
-}) => gthis.FDictionaryForEach
+export type createDictionaryForEach = ($d: {
+    readonly 'compare': g_collation.F.IsABeforeB
+}) => g_this.F.DictionaryForEach
 
-export type CcreateEnrichedDictionaryForEach = ($d: {
-    readonly 'compare': gcollation.FIsABeforeB
-}) => gthis.FEnrichedDictionaryForEach
+export type createEnrichedDictionaryForEach = ($d: {
+    readonly 'compare': g_collation.F.IsABeforeB
+}) => g_this.F.EnrichedDictionaryForEach
 
-export type CdecorateDictionaryEntriesWithKey = gthis.FDecorateDictionaryEntriesWithKey
+export type decorateDictionaryEntriesWithKey = g_this.F.DecorateDictionaryEntriesWithKey
 
-export type CenrichedArrayForEach = gthis.FEnrichedArrayForEach
+export type enrichedArrayForEach = g_this.F.EnrichedArrayForEach
 
 export type API = {
-    arrayForEach: CarrayForEach
-    createDictionaryForEach: CcreateDictionaryForEach
-    createEnrichedDictionaryForEach: CcreateEnrichedDictionaryForEach
-    decorateDictionaryEntriesWithKey: CdecorateDictionaryEntriesWithKey
-    enrichedArrayForEach: CenrichedArrayForEach
+    arrayForEach: arrayForEach
+    createDictionaryForEach: createDictionaryForEach
+    createEnrichedDictionaryForEach: createEnrichedDictionaryForEach
+    decorateDictionaryEntriesWithKey: decorateDictionaryEntriesWithKey
+    enrichedArrayForEach: enrichedArrayForEach
 }

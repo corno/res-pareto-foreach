@@ -1,28 +1,36 @@
 import * as pt from 'pareto-core-types'
 
-import { T   } from './types.generated'
+import { T } from './types.generated'
 
 
-export type IOnElement<GPType> = ($: T.Value<GPType>, ) => void
+export namespace I {}
 
-export type IOnEnrichedArray<GPType> = {
-    'onEmpty': () => void
-    'onNotEmpty': ($c: ($i: ($: T.AnnotatedElement<GPType>, ) => void) => void) => void
+export namespace B {
+    
+    export type OnElement<GType> = ($: T.Value<GType>, ) => void
+    
+    export type OnEnrichedArray<GType> = {
+        'onEmpty': () => void
+        'onNotEmpty': ($c: ($b: ($: T.AnnotatedElement<GType>, ) => void) => void) => void
+    }
+    
+    export type OnEnrichedDictionary<GType> = {
+        'onEmpty': () => void
+        'onNotEmpty': ($c: ($b: ($: T.AnnotatedEntry<GType>, ) => void) => void) => void
+    }
+    
+    export type OnEntry<GType> = ($: T.KeyValuePair<GType>, ) => void
 }
 
-export type IOnEnrichedDictionary<GPType> = {
-    'onEmpty': () => void
-    'onNotEmpty': ($c: ($i: ($: T.AnnotatedEntry<GPType>, ) => void) => void) => void
+export namespace F {
+    
+    export type ArrayForEach = <GType>($: T.Array<GType>, $b: B.OnElement<GType>,) => void
+    
+    export type DecorateDictionaryEntriesWithKey = <GType>($: T.Dictionary<GType>,) => T.KeyValueDictionary<GType>
+    
+    export type DictionaryForEach = <GType>($: T.Dictionary<GType>, $b: B.OnEntry<GType>,) => void
+    
+    export type EnrichedArrayForEach = <GType>($: T.Array<GType>, $b: B.OnEnrichedArray<GType>,) => void
+    
+    export type EnrichedDictionaryForEach = <GType>($: T.Dictionary<GType>, $b: B.OnEnrichedDictionary<GType>,) => void
 }
-
-export type IOnEntry<GPType> = ($: T.KeyValuePair<GPType>, ) => void
-
-export type FArrayForEach = <GPType>($: T.Array<GPType>, $i: IOnElement<GPType>,) => void
-
-export type FDecorateDictionaryEntriesWithKey = <GPType>($: T.Dictionary<GPType>,) => T.KeyValueDictionary<GPType>
-
-export type FDictionaryForEach = <GPType>($: T.Dictionary<GPType>, $i: IOnEntry<GPType>,) => void
-
-export type FEnrichedArrayForEach = <GPType>($: T.Array<GPType>, $i: IOnEnrichedArray<GPType>,) => void
-
-export type FEnrichedDictionaryForEach = <GPType>($: T.Dictionary<GPType>, $i: IOnEnrichedDictionary<GPType>,) => void

@@ -2,9 +2,9 @@ import * as pi from 'pareto-core-internals'
 
 
 
-import { CcreateEnrichedDictionaryForEach } from "../definition/api.generated"
+import { createEnrichedDictionaryForEach } from "../definition/api.generated"
 
-export const $$:CcreateEnrichedDictionaryForEach = ($d) => {
+export const $$: createEnrichedDictionaryForEach = ($d) => {
     return ($, $i) => {
         let length = pi.cc($, () => {
             let count = 0

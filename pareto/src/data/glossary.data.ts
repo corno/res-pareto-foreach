@@ -13,8 +13,8 @@ import {
     optional,
     reference,
     number,
-    method,
-    interfaceReference,
+    builderMethod,
+    builderReference,
     glossaryParameter,
     boolean,
     
@@ -48,27 +48,29 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         })),
         "Value": type(glossaryParameter("Type"))
     }),
-    'interfaces': d({
-        "OnElement": method(typeReference("Value")),
-        "OnEntry": method(typeReference("KeyValuePair")),
+    'builders': d({
+        "OnElement": builderMethod(typeReference("Value")),
+        "OnEntry": builderMethod(typeReference("KeyValuePair")),
         "OnEnrichedDictionary": ['group', {
             'members': d({
-                "onEmpty": method(null),
-                "onNotEmpty": method(null, method(typeReference("AnnotatedEntry")), true),
+                "onEmpty": builderMethod(null),
+                "onNotEmpty": builderMethod(null, builderMethod(typeReference("AnnotatedEntry"))),
             }),
         }],
         "OnEnrichedArray": ['group', {
             'members': d({
-                "onEmpty": method(null),
-                "onNotEmpty": method(null, method(typeReference("AnnotatedElement")), true),
+                "onEmpty": builderMethod(null),
+                "onNotEmpty": builderMethod(null, builderMethod(typeReference("AnnotatedElement"))),
             }),
         }],
     }),
+    'interfaces': d({
+    }),
     'functions': d({
         "DecorateDictionaryEntriesWithKey": func(typeReference("Dictionary"), null, null, data(typeReference("KeyValueDictionary"), false)),
-        "ArrayForEach": func(typeReference("Array"), null, interfaceReference("OnElement"), null),
-        "DictionaryForEach": func(typeReference("Dictionary"), null, interfaceReference("OnEntry"), null),
-        "EnrichedDictionaryForEach": func(typeReference("Dictionary"), null, interfaceReference("OnEnrichedDictionary"), null),
-        "EnrichedArrayForEach": func(typeReference("Array"), null, interfaceReference("OnEnrichedArray"), null),
+        "ArrayForEach": func(typeReference("Array"), null, builderReference("OnElement"), null),
+        "DictionaryForEach": func(typeReference("Dictionary"), null, builderReference("OnEntry"), null),
+        "EnrichedDictionaryForEach": func(typeReference("Dictionary"), null, builderReference("OnEnrichedDictionary"), null),
+        "EnrichedArrayForEach": func(typeReference("Array"), null, builderReference("OnEnrichedArray"), null),
     }),
 }
