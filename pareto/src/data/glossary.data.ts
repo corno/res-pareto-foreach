@@ -46,7 +46,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
             "isLast": member(boolean()),
             "value": member(glossaryParameter("Type")),
         })),
-        "Value": type(glossaryParameter("Type"))
+        "Value": type(glossaryParameter("Type")),
     }),
     'builders': d({
         "OnElement": builderMethod(typeReference("Value")),

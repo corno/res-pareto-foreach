@@ -9,12 +9,12 @@ export const $: gapi.T.API<pd.SourceLocation> = {
     'algorithms': d({
         "arrayForEach": algorithm(functionReference("this", {}, "ArrayForEach")),
         "createDictionaryForEach": algorithm(functionReference("this", {}, "DictionaryForEach"), constructor(null, {
-            "compare": functionReference("collation", {}, "IsABeforeB")
+            "compare": functionReference("collation", {}, "IsABeforeB"),
         })),
         "createEnrichedDictionaryForEach": algorithm(functionReference("this", {}, "EnrichedDictionaryForEach"), constructor(null, {
-            "compare": functionReference("collation", {}, "IsABeforeB")
+            "compare": functionReference("collation", {}, "IsABeforeB"),
         })),
         "enrichedArrayForEach": algorithm(functionReference("this", {}, "EnrichedArrayForEach")),
         "decorateDictionaryEntriesWithKey": algorithm(functionReference("this", {}, "DecorateDictionaryEntriesWithKey")),
-    })
+    }),
 }
