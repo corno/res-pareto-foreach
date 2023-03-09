@@ -18,21 +18,19 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
         "res-pareto-collation": null,
     }),
     'type': ['resource', {
-        'definition': {
-            'glossary': {
-                'root': glossary,
-                'imports': d({
-                    //"common": external("glo-pareto-common"),
-                }),
-            },
-            'api': {
-                'root': api,
+        'glossary': {
+            'root': glossary,
+            'imports': d({
+                //"common": external("glo-pareto-common"),
+            }),
+        },
+        'api': {
+            'root': api,
 
-                'imports': d({
-                    "collation": external("res-pareto-collation"),
-                    "this": this_(),
-                }),
-            },
+            'imports': d({
+                "collation": external("res-pareto-collation"),
+                "this": this_(),
+            }),
         },
         'nativeDependencies': d({}),
         'devDependencies': d({

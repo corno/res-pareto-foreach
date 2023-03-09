@@ -1,4 +1,4 @@
-import { API } from "./definition/api.generated"
+import { API } from "./api.generated"
 import { $$ as iarrayForEach } from "./implementations/arrayForEach.native"
 import { $$ as icreateDictionaryForEach } from "./implementations/createDictionaryForEach.native"
 import { $$ as icreateEnrichedDictionaryForEach } from "./implementations/createEnrichedDictionaryForEach.native"

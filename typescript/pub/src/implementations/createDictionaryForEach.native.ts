@@ -1,6 +1,6 @@
 
 
-import { createDictionaryForEach } from "../definition/api.generated"
+import { createDictionaryForEach } from "../api.generated"
 
 export const $$: createDictionaryForEach = ($d) => {
     return ($, $i) => {

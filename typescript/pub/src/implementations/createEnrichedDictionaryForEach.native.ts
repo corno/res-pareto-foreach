@@ -2,7 +2,7 @@ import * as pi from 'pareto-core-internals'
 
 
 
-import { createEnrichedDictionaryForEach } from "../definition/api.generated"
+import { createEnrichedDictionaryForEach } from "../api.generated"
 
 export const $$: createEnrichedDictionaryForEach = ($d) => {
     return ($, $i) => {
