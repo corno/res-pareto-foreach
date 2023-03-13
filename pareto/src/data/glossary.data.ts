@@ -7,8 +7,8 @@ import {
     dictionary, member, taggedUnion, types, group,
     array,
     typeReference,
-    data,
-    func,
+    sdata,
+    sfunc,
     type,
     optional,
     reference,
@@ -17,13 +17,13 @@ import {
     builderReference,
     glossaryParameter,
     boolean,
-    
+
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
-import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 const d = pd.d
 
-export const $: gglossary.T.Glossary<pd.SourceLocation> = {
+export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({
         "Type": null,
     }),
@@ -48,29 +48,30 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         })),
         "Value": type(glossaryParameter("Type")),
     }),
-    'builders': d({
-        "OnElement": builderMethod(typeReference("Value")),
-        "OnEntry": builderMethod(typeReference("KeyValuePair")),
-        "OnEnrichedDictionary": ['group', {
-            'members': d({
-                "onEmpty": builderMethod(null),
-                "onNotEmpty": builderMethod(null, builderMethod(typeReference("AnnotatedEntry"))),
-            }),
-        }],
-        "OnEnrichedArray": ['group', {
-            'members': d({
-                "onEmpty": builderMethod(null),
-                "onNotEmpty": builderMethod(null, builderMethod(typeReference("AnnotatedElement"))),
-            }),
-        }],
-    }),
-    'interfaces': d({
-    }),
-    'functions': d({
-        "DecorateDictionaryEntriesWithKey": func(typeReference("Dictionary"), null, null, data(typeReference("KeyValueDictionary"), false)),
-        "ArrayForEach": func(typeReference("Array"), null, builderReference("OnElement"), null),
-        "DictionaryForEach": func(typeReference("Dictionary"), null, builderReference("OnEntry"), null),
-        "EnrichedDictionaryForEach": func(typeReference("Dictionary"), null, builderReference("OnEnrichedDictionary"), null),
-        "EnrichedArrayForEach": func(typeReference("Array"), null, builderReference("OnEnrichedArray"), null),
-    }),
+    'type': ['synchronous', {
+        'builders': d({
+            "OnElement": builderMethod(typeReference("Value")),
+            "OnEntry": builderMethod(typeReference("KeyValuePair")),
+            "OnEnrichedDictionary": ['group', {
+                'members': d({
+                    "onEmpty": builderMethod(null),
+                    "onNotEmpty": builderMethod(null, builderMethod(typeReference("AnnotatedEntry"))),
+                }),
+            }],
+            "OnEnrichedArray": ['group', {
+                'members': d({
+                    "onEmpty": builderMethod(null),
+                    "onNotEmpty": builderMethod(null, builderMethod(typeReference("AnnotatedElement"))),
+                }),
+            }],
+        }),
+        'functions': d({
+            "DecorateDictionaryEntriesWithKey": sfunc(typeReference("Dictionary"), null, null, sdata(typeReference("KeyValueDictionary"))),
+            "ArrayForEach": sfunc(typeReference("Array"), null, builderReference("OnElement"), null),
+            "DictionaryForEach": sfunc(typeReference("Dictionary"), null, builderReference("OnEntry"), null),
+            "EnrichedDictionaryForEach": sfunc(typeReference("Dictionary"), null, builderReference("OnEnrichedDictionary"), null),
+            "EnrichedArrayForEach": sfunc(typeReference("Array"), null, builderReference("OnEnrichedArray"), null),
+        }),
+
+    }],
 }

@@ -1,6 +1,7 @@
 import * as pd from 'pareto-core-data'
 
-import * as gproject from "lib-pareto-typescript-project/dist/submodules/project"
+import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+import * as g_project from "lib-pareto-typescript-project/dist/submodules/project"
 
 const d = pd.d
 
@@ -9,7 +10,7 @@ import { $ as glossary } from "./glossary.data"
 
 import { external, this_ } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
 
-export const $: gproject.T.Project<pd.SourceLocation> = {
+export const $: g_project.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "forEach functions for dictionaries and arrays",
     'license': "TBD",
@@ -42,9 +43,10 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
             'glossary': {
                 'parameters': d({}),
                 'types': d({}),
-                'builders': d({}),
-                'interfaces': d({}),
-                'functions': d({}),
+                'type': ['synchronous', {
+                    'builders': d({}),
+                    'functions': d<g_glossary.T.Glossary._ltype.synchronous.functions.D<pd.SourceLocation>>({}),
+                }],
             },
             'imports': d({}),
         }
