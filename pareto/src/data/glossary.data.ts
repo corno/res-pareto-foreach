@@ -11,12 +11,12 @@ import {
     sfunc,
     type,
     optional,
-    reference,
     number,
     builderMethod,
     builderReference,
     glossaryParameter,
     boolean,
+    ref,
 
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
@@ -27,10 +27,11 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({
         "Type": null,
     }),
+    'imports': d({}),
     'types': d({
         "Array": type(array(glossaryParameter("Type"))),
         "Dictionary": type(dictionary(glossaryParameter("Type"))),
-        "KeyValueDictionary": type(dictionary(reference("KeyValuePair"))),
+        "KeyValueDictionary": type(dictionary(ref(typeReference("KeyValuePair")))),
         "KeyValuePair": type(group({
             "key": member(string()),
             "value": member(glossaryParameter("Type")),
