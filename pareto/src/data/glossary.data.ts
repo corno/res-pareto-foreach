@@ -17,6 +17,7 @@ import {
     glossaryParameter,
     boolean,
     ref,
+    bldr,
 
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
@@ -67,11 +68,11 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             }],
         }),
         'functions': d({
-            "DecorateDictionaryEntriesWithKey": sfunc(typeReference("Dictionary"), null, null, sdata(typeReference("KeyValueDictionary"))),
-            "ArrayForEach": sfunc(typeReference("Array"), null, builderReference("OnElement"), null),
-            "DictionaryForEach": sfunc(typeReference("Dictionary"), null, builderReference("OnEntry"), null),
-            "EnrichedDictionaryForEach": sfunc(typeReference("Dictionary"), null, builderReference("OnEnrichedDictionary"), null),
-            "EnrichedArrayForEach": sfunc(typeReference("Array"), null, builderReference("OnEnrichedArray"), null),
+            "DecorateDictionaryEntriesWithKey": sfunc(sdata(typeReference("Dictionary")), sdata(typeReference("KeyValueDictionary"))),
+            "ArrayForEach": sfunc(sdata(typeReference("Array")), bldr(builderReference("OnElement"))),
+            "DictionaryForEach": sfunc(sdata(typeReference("Dictionary")), bldr(builderReference("OnEntry"))),
+            "EnrichedDictionaryForEach": sfunc(sdata(typeReference("Dictionary")), bldr(builderReference("OnEnrichedDictionary"))),
+            "EnrichedArrayForEach": sfunc(sdata(typeReference("Array")), bldr(builderReference("OnEnrichedArray"))),
         }),
 
     }],

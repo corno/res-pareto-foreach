@@ -20,15 +20,26 @@ export namespace B {
     export type OnEntry<GType> = ($: T.KeyValuePair<GType>, ) => void
 }
 
+export namespace C {
+    
+    export type OnElement<GType> = ($b: B.OnElement<GType>) => void
+    
+    export type OnEnrichedArray<GType> = ($b: B.OnEnrichedArray<GType>) => void
+    
+    export type OnEnrichedDictionary<GType> = ($b: B.OnEnrichedDictionary<GType>) => void
+    
+    export type OnEntry<GType> = ($b: B.OnEntry<GType>) => void
+}
+
 export namespace F {
     
-    export type ArrayForEach = <GType>($: T.Array<GType>, $b: B.OnElement<GType>,) => void
+    export type ArrayForEach = <GType>($: T.Array<GType>, $b: B.OnElement<GType>) => void
     
-    export type DecorateDictionaryEntriesWithKey = <GType>($: T.Dictionary<GType>,) => T.KeyValueDictionary<GType>
+    export type DecorateDictionaryEntriesWithKey = <GType>($: T.Dictionary<GType>) => T.KeyValueDictionary<GType>
     
-    export type DictionaryForEach = <GType>($: T.Dictionary<GType>, $b: B.OnEntry<GType>,) => void
+    export type DictionaryForEach = <GType>($: T.Dictionary<GType>, $b: B.OnEntry<GType>) => void
     
-    export type EnrichedArrayForEach = <GType>($: T.Array<GType>, $b: B.OnEnrichedArray<GType>,) => void
+    export type EnrichedArrayForEach = <GType>($: T.Array<GType>, $b: B.OnEnrichedArray<GType>) => void
     
-    export type EnrichedDictionaryForEach = <GType>($: T.Dictionary<GType>, $b: B.OnEnrichedDictionary<GType>,) => void
+    export type EnrichedDictionaryForEach = <GType>($: T.Dictionary<GType>, $b: B.OnEnrichedDictionary<GType>) => void
 }
