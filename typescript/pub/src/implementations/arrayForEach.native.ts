@@ -1,9 +1,12 @@
 
 
-import { arrayForEach } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$: arrayForEach = ($, $i) => {
-    $.__forEach(($) => {
-        $i($)
+export const $$: A.arrayForEach = ($is, $c) => {
+    $c(($) => {
+        $.__forEach(($) => {
+            $is.onElement($)
+        })
+
     })
 }

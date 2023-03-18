@@ -2,22 +2,18 @@ import * as pd from 'pareto-core-data'
 
 import {
     string,
-    null_,
-    nested,
-    dictionary, member, taggedUnion, types, group,
+    dictionary, member, group,
     array,
     typeReference,
-    sdata,
-    sfunc,
     type,
-    optional,
-    number,
-    builderMethod,
-    builderReference,
     glossaryParameter,
     boolean,
     ref,
-    bldr,
+    sInterfaceMethod,
+    sfunction,
+    data,
+    sconstructor,
+    sInterfaceReference,
 
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
@@ -50,30 +46,38 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         })),
         "Value": type(glossaryParameter("Type")),
     }),
-    'type': ['synchronous', {
-        'builders': d({
-            "OnElement": builderMethod(typeReference("Value")),
-            "OnEntry": builderMethod(typeReference("KeyValuePair")),
+    'asynchronous': {
+        'interfaces': d({}),
+        'constructors': d({}),
+        'functions': d({}),
+    },
+    'synchronous': {
+        'interfaces': d({
+            "OnElement": sInterfaceMethod(typeReference("Value")),
+            "OnEntry": sInterfaceMethod(typeReference("KeyValuePair")),
             "OnEnrichedDictionary": ['group', {
                 'members': d({
-                    "onEmpty": builderMethod(null),
-                    "onNotEmpty": builderMethod(null, builderMethod(typeReference("AnnotatedEntry"))),
+                    "onEmpty": sInterfaceMethod(null),
+                    "onNotEmpty": sInterfaceMethod(null, sInterfaceMethod(typeReference("AnnotatedEntry"))),
                 }),
             }],
             "OnEnrichedArray": ['group', {
                 'members': d({
-                    "onEmpty": builderMethod(null),
-                    "onNotEmpty": builderMethod(null, builderMethod(typeReference("AnnotatedElement"))),
+                    "onEmpty": sInterfaceMethod(null),
+                    "onNotEmpty": sInterfaceMethod(null, sInterfaceMethod(typeReference("AnnotatedElement"))),
                 }),
             }],
+            "OnArray": sInterfaceMethod(typeReference("Array")),
+            "OnDictionary": sInterfaceMethod(typeReference("Dictionary")),
+        }),
+        'constructors': d({
+            "ArrayForEach": sconstructor(sInterfaceReference("OnArray"), { "onElement": sInterfaceReference("OnElement")}),
+            "DictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), { "onElement": sInterfaceReference("OnEntry")}),
+            "EnrichedDictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), { "callback": sInterfaceReference("OnEnrichedDictionary")}),
+            "EnrichedArrayForEach": sconstructor(sInterfaceReference("OnArray"), { "callback": sInterfaceReference("OnEnrichedArray")}),
         }),
         'functions': d({
-            "DecorateDictionaryEntriesWithKey": sfunc(sdata(typeReference("Dictionary")), sdata(typeReference("KeyValueDictionary"))),
-            "ArrayForEach": sfunc(sdata(typeReference("Array")), bldr(builderReference("OnElement"))),
-            "DictionaryForEach": sfunc(sdata(typeReference("Dictionary")), bldr(builderReference("OnEntry"))),
-            "EnrichedDictionaryForEach": sfunc(sdata(typeReference("Dictionary")), bldr(builderReference("OnEnrichedDictionary"))),
-            "EnrichedArrayForEach": sfunc(sdata(typeReference("Array")), bldr(builderReference("OnEnrichedArray"))),
+            "DecorateDictionaryEntriesWithKey": sfunction(data(typeReference("Dictionary")), typeReference("KeyValueDictionary")),
         }),
-
-    }],
+    },
 }

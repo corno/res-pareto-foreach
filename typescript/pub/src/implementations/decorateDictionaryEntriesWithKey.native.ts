@@ -1,6 +1,6 @@
 
 
-import { decorateDictionaryEntriesWithKey } from "../api.generated"
+import { A } from "../api.generated"
 
 export const $$: decorateDictionaryEntriesWithKey = ($) => {
     return $.__mapWithKey(($, key) => {
