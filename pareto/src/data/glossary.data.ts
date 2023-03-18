@@ -71,10 +71,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "OnDictionary": sInterfaceMethod(typeReference("Dictionary")),
         }),
         'constructors': d({
-            "ArrayForEach": sconstructor(sInterfaceReference("OnArray"), { "onElement": sInterfaceReference("OnElement")}),
-            "DictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), { "onElement": sInterfaceReference("OnEntry")}),
-            "EnrichedDictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), { "callback": sInterfaceReference("OnEnrichedDictionary")}),
-            "EnrichedArrayForEach": sconstructor(sInterfaceReference("OnArray"), { "callback": sInterfaceReference("OnEnrichedArray")}),
+            "ArrayForEach": sconstructor(sInterfaceReference("OnArray"), sInterfaceReference("OnElement")),
+            "DictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), sInterfaceReference("OnEntry")),
+            "EnrichedDictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), sInterfaceReference("OnEnrichedDictionary")),
+            "EnrichedArrayForEach": sconstructor(sInterfaceReference("OnArray"), sInterfaceReference("OnEnrichedArray")),
         }),
         'functions': d({
             "DecorateDictionaryEntriesWithKey": sfunction(data(typeReference("Dictionary")), typeReference("KeyValueDictionary")),

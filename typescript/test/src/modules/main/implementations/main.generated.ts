@@ -6,7 +6,7 @@ import * as g_test from "lib-pareto-test"
 
 import { $$ as getTestSet } from "./getTestSet.p"
 
-import { A } from "../api.generated"
+import {  main } from "../api.generated"
 
 export const $$: main = ($) => {
     g_test.$a.createTestProgram({

@@ -67,21 +67,13 @@ export namespace SYNC {
     
     export namespace C {
         
-        export type ArrayForEach = <GType>($is: {
-            'onElement': I.OnElement<GType>
-        }, $c: ($b: I.OnArray<GType>) => void) => void
+        export type ArrayForEach = <GType>($i: I.OnElement<GType>, $c: ($b: I.OnArray<GType>) => void) => void
         
-        export type DictionaryForEach = <GType>($is: {
-            'onElement': I.OnEntry<GType>
-        }, $c: ($b: I.OnDictionary<GType>) => void) => void
+        export type DictionaryForEach = <GType>($i: I.OnEntry<GType>, $c: ($b: I.OnDictionary<GType>) => void) => void
         
-        export type EnrichedArrayForEach = <GType>($is: {
-            'callback': I.OnEnrichedArray<GType>
-        }, $c: ($b: I.OnArray<GType>) => void) => void
+        export type EnrichedArrayForEach = <GType>($i: I.OnEnrichedArray<GType>, $c: ($b: I.OnArray<GType>) => void) => void
         
-        export type EnrichedDictionaryForEach = <GType>($is: {
-            'callback': I.OnEnrichedDictionary<GType>
-        }, $c: ($b: I.OnDictionary<GType>) => void) => void
+        export type EnrichedDictionaryForEach = <GType>($i: I.OnEnrichedDictionary<GType>, $c: ($b: I.OnDictionary<GType>) => void) => void
     }
     
     export namespace C2 {

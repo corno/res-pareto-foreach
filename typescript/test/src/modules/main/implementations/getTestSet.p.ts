@@ -8,7 +8,7 @@ import * as g_pub from "../../../../../pub"
 // import * as pubTypes from "../../../../pub/dist/submodules/public"
 // import * as pubPrivate from "../../../../pub/dist/submodules/private"
 
-import { A } from "../api.generated"
+import { getTestSet } from "../api.generated"
 
 export const $$: getTestSet = ($) => {
 

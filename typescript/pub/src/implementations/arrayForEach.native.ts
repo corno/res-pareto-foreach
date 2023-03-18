@@ -2,10 +2,10 @@
 
 import { A } from "../api.generated"
 
-export const $$: A.arrayForEach = ($is, $c) => {
+export const $$: A.arrayForEach = ($i, $c) => {
     $c(($) => {
         $.__forEach(($) => {
-            $is.onElement($)
+            $i($)
         })
 
     })
