@@ -48,8 +48,8 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({}),
+        'algorithms': d({}),
+        
     },
     'synchronous': {
         'interfaces': d({
@@ -70,13 +70,11 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "OnArray": sInterfaceMethod(typeReference("Array")),
             "OnDictionary": sInterfaceMethod(typeReference("Dictionary")),
         }),
-        'constructors': d({
+        'algorithms': d({
             "ArrayForEach": sconstructor(sInterfaceReference("OnArray"), sInterfaceReference("OnElement")),
             "DictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), sInterfaceReference("OnEntry")),
             "EnrichedDictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), sInterfaceReference("OnEnrichedDictionary")),
             "EnrichedArrayForEach": sconstructor(sInterfaceReference("OnArray"), sInterfaceReference("OnEnrichedArray")),
-        }),
-        'functions': d({
             "DecorateDictionaryEntriesWithKey": sfunction(data(typeReference("Dictionary")), typeReference("KeyValueDictionary")),
         }),
     },
