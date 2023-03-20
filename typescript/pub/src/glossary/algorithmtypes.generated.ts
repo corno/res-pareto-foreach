@@ -52,27 +52,27 @@ export namespace SYNC {
         
         
         export namespace C {
-            export type ArrayForEach = <GType>($i: SYNC.I.OnElement<GType>, $c: ($b: SYNC.I.OnArray<GType>) => void) => void
+            export type ArrayForEach<GType> = ($i: SYNC.I.OnElement<GType>, $c: ($b: SYNC.I.OnArray<GType>) => void) => void
         }
         
         
         export namespace F {
-            export type DecorateDictionaryEntriesWithKey = <GType>($: T.Dictionary<GType>) => T.KeyValueDictionary<GType>
+            export type DecorateDictionaryEntriesWithKey<GType> = ($: T.Dictionary<GType>) => T.KeyValueDictionary<GType>
         }
         
         
         export namespace C {
-            export type DictionaryForEach = <GType>($i: SYNC.I.OnEntry<GType>, $c: ($b: SYNC.I.OnDictionary<GType>) => void) => void
+            export type DictionaryForEach<GType> = ($i: SYNC.I.OnEntry<GType>, $c: ($b: SYNC.I.OnDictionary<GType>) => void) => void
         }
         
         
         export namespace C {
-            export type EnrichedArrayForEach = <GType>($i: SYNC.I.OnEnrichedArray<GType>, $c: ($b: SYNC.I.OnArray<GType>) => void) => void
+            export type EnrichedArrayForEach<GType> = ($i: SYNC.I.OnEnrichedArray<GType>, $c: ($b: SYNC.I.OnArray<GType>) => void) => void
         }
         
         
         export namespace C {
-            export type EnrichedDictionaryForEach = <GType>($i: SYNC.I.OnEnrichedDictionary<GType>, $c: ($b: SYNC.I.OnDictionary<GType>) => void) => void
+            export type EnrichedDictionaryForEach<GType> = ($i: SYNC.I.OnEnrichedDictionary<GType>, $c: ($b: SYNC.I.OnDictionary<GType>) => void) => void
         }
     }
 }

@@ -5,19 +5,19 @@ import * as g_this from "./glossary"
 
 export namespace A {
     
-    export type arrayForEach = g_this.SYNC.A.C.ArrayForEach
+    export type arrayForEach = <GAnnotation>() => g_this.SYNC.A.C.ArrayForEach<GAnnotation>
     
-    export type createDictionaryForEach = ($d: {
+    export type createDictionaryForEach = <GAnnotation>($d: {
         readonly 'compare': g_collation.SYNC.A.F.IsABeforeB
-    }, $se: null) => g_this.SYNC.A.C.DictionaryForEach
+    }, $se: null) => g_this.SYNC.A.C.DictionaryForEach<GAnnotation>
     
-    export type createEnrichedDictionaryForEach = ($d: {
+    export type createEnrichedDictionaryForEach = <GAnnotation>($d: {
         readonly 'compare': g_collation.SYNC.A.F.IsABeforeB
-    }, $se: null) => g_this.SYNC.A.C.EnrichedDictionaryForEach
+    }, $se: null) => g_this.SYNC.A.C.EnrichedDictionaryForEach<GAnnotation>
     
-    export type decorateDictionaryEntriesWithKey = g_this.SYNC.A.F.DecorateDictionaryEntriesWithKey
+    export type decorateDictionaryEntriesWithKey = <GAnnotation>() => g_this.SYNC.A.F.DecorateDictionaryEntriesWithKey<GAnnotation>
     
-    export type enrichedArrayForEach = g_this.SYNC.A.C.EnrichedArrayForEach
+    export type enrichedArrayForEach = <GAnnotation>() => g_this.SYNC.A.C.EnrichedArrayForEach<GAnnotation>
 }
 
 export type API = {
