@@ -21,13 +21,13 @@ export namespace SYNC {
         export type OnElement<GType> = ($: T.Value<GType>, ) => void
         
         export type OnEnrichedArray<GType> = {
-            'onEmpty': () => void
-            'onNotEmpty': ($c: ($b: ($: T.AnnotatedElement<GType>, ) => void) => void) => void
+            readonly 'onEmpty': () => void
+            readonly 'onNotEmpty': ($c: ($b: ($: T.AnnotatedElement<GType>, ) => void) => void) => void
         }
         
         export type OnEnrichedDictionary<GType> = {
-            'onEmpty': () => void
-            'onNotEmpty': ($c: ($b: ($: T.AnnotatedEntry<GType>, ) => void) => void) => void
+            readonly 'onEmpty': () => void
+            readonly 'onNotEmpty': ($c: ($b: ($: T.AnnotatedEntry<GType>, ) => void) => void) => void
         }
         
         export type OnEntry<GType> = ($: T.KeyValuePair<GType>, ) => void

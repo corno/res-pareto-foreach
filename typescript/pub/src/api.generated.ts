@@ -9,11 +9,11 @@ export namespace A {
     
     export type createDictionaryForEach = ($d: {
         readonly 'compare': g_collation.SYNC.A.F.IsABeforeB
-    }, $se: {}) => g_this.SYNC.A.C.DictionaryForEach
+    }, $se: null) => g_this.SYNC.A.C.DictionaryForEach
     
     export type createEnrichedDictionaryForEach = ($d: {
         readonly 'compare': g_collation.SYNC.A.F.IsABeforeB
-    }, $se: {}) => g_this.SYNC.A.C.EnrichedDictionaryForEach
+    }, $se: null) => g_this.SYNC.A.C.EnrichedDictionaryForEach
     
     export type decorateDictionaryEntriesWithKey = g_this.SYNC.A.F.DecorateDictionaryEntriesWithKey
     
@@ -21,9 +21,9 @@ export namespace A {
 }
 
 export type API = {
-    arrayForEach: A.arrayForEach
-    createDictionaryForEach: A.createDictionaryForEach
-    createEnrichedDictionaryForEach: A.createEnrichedDictionaryForEach
-    decorateDictionaryEntriesWithKey: A.decorateDictionaryEntriesWithKey
-    enrichedArrayForEach: A.enrichedArrayForEach
+    readonly 'arrayForEach': A.arrayForEach
+    readonly 'createDictionaryForEach': A.createDictionaryForEach
+    readonly 'createEnrichedDictionaryForEach': A.createEnrichedDictionaryForEach
+    readonly 'decorateDictionaryEntriesWithKey': A.decorateDictionaryEntriesWithKey
+    readonly 'enrichedArrayForEach': A.enrichedArrayForEach
 }
