@@ -52,7 +52,7 @@ export namespace SYNC {
         
         
         export namespace C {
-            export type ArrayForEach = <GType>($i: I.OnElement<GType>, $c: ($b: I.OnArray<GType>) => void) => void
+            export type ArrayForEach = <GType>($i: SYNC.I.OnElement<GType>, $c: ($b: SYNC.I.OnArray<GType>) => void) => void
         }
         
         
@@ -62,17 +62,17 @@ export namespace SYNC {
         
         
         export namespace C {
-            export type DictionaryForEach = <GType>($i: I.OnEntry<GType>, $c: ($b: I.OnDictionary<GType>) => void) => void
+            export type DictionaryForEach = <GType>($i: SYNC.I.OnEntry<GType>, $c: ($b: SYNC.I.OnDictionary<GType>) => void) => void
         }
         
         
         export namespace C {
-            export type EnrichedArrayForEach = <GType>($i: I.OnEnrichedArray<GType>, $c: ($b: I.OnArray<GType>) => void) => void
+            export type EnrichedArrayForEach = <GType>($i: SYNC.I.OnEnrichedArray<GType>, $c: ($b: SYNC.I.OnArray<GType>) => void) => void
         }
         
         
         export namespace C {
-            export type EnrichedDictionaryForEach = <GType>($i: I.OnEnrichedDictionary<GType>, $c: ($b: I.OnDictionary<GType>) => void) => void
+            export type EnrichedDictionaryForEach = <GType>($i: SYNC.I.OnEnrichedDictionary<GType>, $c: ($b: SYNC.I.OnDictionary<GType>) => void) => void
         }
     }
 }

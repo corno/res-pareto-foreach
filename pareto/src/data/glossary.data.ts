@@ -75,7 +75,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "DictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), sInterfaceReference("OnEntry")),
             "EnrichedDictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), sInterfaceReference("OnEnrichedDictionary")),
             "EnrichedArrayForEach": sconstructor(sInterfaceReference("OnArray"), sInterfaceReference("OnEnrichedArray")),
-            "DecorateDictionaryEntriesWithKey": sfunction(data(typeReference("Dictionary")), typeReference("KeyValueDictionary")),
+            "DecorateDictionaryEntriesWithKey": sfunction(typeReference("KeyValueDictionary"), data(typeReference("Dictionary"))),
         }),
     },
 }
