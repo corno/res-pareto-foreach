@@ -12,7 +12,7 @@ import {
     sInterfaceMethod,
     sfunction,
     data,
-    sconstructor,
+    sbuilder,
     sInterfaceReference,
 
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
@@ -67,14 +67,12 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                     "onNotEmpty": sInterfaceMethod(null, sInterfaceMethod(typeReference("AnnotatedElement"))),
                 }),
             }],
-            "OnArray": sInterfaceMethod(typeReference("Array")),
-            "OnDictionary": sInterfaceMethod(typeReference("Dictionary")),
         }),
         'algorithms': d({
-            "ArrayForEach": sconstructor(sInterfaceReference("OnArray"), sInterfaceReference("OnElement")),
-            "DictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), sInterfaceReference("OnEntry")),
-            "EnrichedDictionaryForEach": sconstructor(sInterfaceReference("OnDictionary"), sInterfaceReference("OnEnrichedDictionary")),
-            "EnrichedArrayForEach": sconstructor(sInterfaceReference("OnArray"), sInterfaceReference("OnEnrichedArray")),
+            "ArrayForEach": sbuilder(data(typeReference("Array")), sInterfaceReference("OnElement")),
+            "DictionaryForEach": sbuilder(data(typeReference("Dictionary")), sInterfaceReference("OnEntry")),
+            "EnrichedDictionaryForEach": sbuilder(data(typeReference("Dictionary")), sInterfaceReference("OnEnrichedDictionary")),
+            "EnrichedArrayForEach": sbuilder(data(typeReference("Array")), sInterfaceReference("OnEnrichedArray")),
             "DecorateDictionaryEntriesWithKey": sfunction(typeReference("KeyValueDictionary"), data(typeReference("Dictionary"))),
         }),
     },

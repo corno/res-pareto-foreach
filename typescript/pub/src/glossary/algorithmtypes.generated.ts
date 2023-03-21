@@ -14,10 +14,6 @@ export namespace SYNC {
     
     export namespace I {
         
-        export type OnArray<GType> = ($: T.Array<GType>, ) => void
-        
-        export type OnDictionary<GType> = ($: T.Dictionary<GType>, ) => void
-        
         export type OnElement<GType> = ($: T.Value<GType>, ) => void
         
         export type OnEnrichedArray<GType> = {
@@ -35,10 +31,6 @@ export namespace SYNC {
     
     export namespace IW {
         
-        export type OnArray<GType> = ($c: ($b: I.OnArray<GType>) => void) => void
-        
-        export type OnDictionary<GType> = ($c: ($b: I.OnDictionary<GType>) => void) => void
-        
         export type OnElement<GType> = ($c: ($b: I.OnElement<GType>) => void) => void
         
         export type OnEnrichedArray<GType> = ($c: ($b: I.OnEnrichedArray<GType>) => void) => void
@@ -51,8 +43,8 @@ export namespace SYNC {
     export namespace A {
         
         
-        export namespace C {
-            export type ArrayForEach<GType> = ($i: SYNC.I.OnElement<GType>, $c: ($b: SYNC.I.OnArray<GType>) => void) => void
+        export namespace B {
+            export type ArrayForEach<GType> = ($: T.Array<GType>, $i: SYNC.I.OnElement<GType>) => void
         }
         
         
@@ -61,18 +53,18 @@ export namespace SYNC {
         }
         
         
-        export namespace C {
-            export type DictionaryForEach<GType> = ($i: SYNC.I.OnEntry<GType>, $c: ($b: SYNC.I.OnDictionary<GType>) => void) => void
+        export namespace B {
+            export type DictionaryForEach<GType> = ($: T.Dictionary<GType>, $i: SYNC.I.OnEntry<GType>) => void
         }
         
         
-        export namespace C {
-            export type EnrichedArrayForEach<GType> = ($i: SYNC.I.OnEnrichedArray<GType>, $c: ($b: SYNC.I.OnArray<GType>) => void) => void
+        export namespace B {
+            export type EnrichedArrayForEach<GType> = ($: T.Array<GType>, $i: SYNC.I.OnEnrichedArray<GType>) => void
         }
         
         
-        export namespace C {
-            export type EnrichedDictionaryForEach<GType> = ($i: SYNC.I.OnEnrichedDictionary<GType>, $c: ($b: SYNC.I.OnDictionary<GType>) => void) => void
+        export namespace B {
+            export type EnrichedDictionaryForEach<GType> = ($: T.Dictionary<GType>, $i: SYNC.I.OnEnrichedDictionary<GType>) => void
         }
     }
 }
