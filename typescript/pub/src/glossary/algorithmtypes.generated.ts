@@ -29,17 +29,6 @@ export namespace SYNC {
         export type OnEntry<GType> = ($: T.KeyValuePair<GType>, ) => void
     }
     
-    export namespace IW {
-        
-        export type OnElement<GType> = ($c: ($b: I.OnElement<GType>) => void) => void
-        
-        export type OnEnrichedArray<GType> = ($c: ($b: I.OnEnrichedArray<GType>) => void) => void
-        
-        export type OnEnrichedDictionary<GType> = ($c: ($b: I.OnEnrichedDictionary<GType>) => void) => void
-        
-        export type OnEntry<GType> = ($c: ($b: I.OnEntry<GType>) => void) => void
-    }
-    
     export namespace A {
         
         

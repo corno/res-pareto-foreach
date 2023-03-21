@@ -9,11 +9,11 @@ export namespace A {
     
     export type createDictionaryForEach = <GAnnotation>($d: {
         readonly 'compare': g_collation.SYNC.A.F.IsABeforeB
-    }, $se: null) => g_this.SYNC.A.B.DictionaryForEach<GAnnotation>
+    }, ) => g_this.SYNC.A.B.DictionaryForEach<GAnnotation>
     
     export type createEnrichedDictionaryForEach = <GAnnotation>($d: {
         readonly 'compare': g_collation.SYNC.A.F.IsABeforeB
-    }, $se: null) => g_this.SYNC.A.B.EnrichedDictionaryForEach<GAnnotation>
+    }, ) => g_this.SYNC.A.B.EnrichedDictionaryForEach<GAnnotation>
     
     export type decorateDictionaryEntriesWithKey = <GAnnotation>() => g_this.SYNC.A.F.DecorateDictionaryEntriesWithKey<GAnnotation>
     
