@@ -32,7 +32,7 @@ export namespace SYNC {
     export namespace A {
         
         
-        export namespace B {
+        export namespace P {
             export type ArrayForEach<GType> = ($: T.Array<GType>, $i: SYNC.I.OnElement<GType>) => void
         }
         
@@ -42,17 +42,17 @@ export namespace SYNC {
         }
         
         
-        export namespace B {
+        export namespace P {
             export type DictionaryForEach<GType> = ($: T.Dictionary<GType>, $i: SYNC.I.OnEntry<GType>) => void
         }
         
         
-        export namespace B {
+        export namespace P {
             export type EnrichedArrayForEach<GType> = ($: T.Array<GType>, $i: SYNC.I.OnEnrichedArray<GType>) => void
         }
         
         
-        export namespace B {
+        export namespace P {
             export type EnrichedDictionaryForEach<GType> = ($: T.Dictionary<GType>, $i: SYNC.I.OnEnrichedDictionary<GType>) => void
         }
     }

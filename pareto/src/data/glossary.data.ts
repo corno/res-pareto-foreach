@@ -12,7 +12,7 @@ import {
     sInterfaceMethod,
     sfunction,
     data,
-    sbuilder,
+    procedure,
     sInterfaceReference,
 
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
@@ -69,10 +69,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             }],
         }),
         'algorithms': d({
-            "ArrayForEach": sbuilder(data(typeReference("Array")), sInterfaceReference("OnElement")),
-            "DictionaryForEach": sbuilder(data(typeReference("Dictionary")), sInterfaceReference("OnEntry")),
-            "EnrichedDictionaryForEach": sbuilder(data(typeReference("Dictionary")), sInterfaceReference("OnEnrichedDictionary")),
-            "EnrichedArrayForEach": sbuilder(data(typeReference("Array")), sInterfaceReference("OnEnrichedArray")),
+            "ArrayForEach": procedure(data(typeReference("Array")), sInterfaceReference("OnElement")),
+            "DictionaryForEach": procedure(data(typeReference("Dictionary")), sInterfaceReference("OnEntry")),
+            "EnrichedDictionaryForEach": procedure(data(typeReference("Dictionary")), sInterfaceReference("OnEnrichedDictionary")),
+            "EnrichedArrayForEach": procedure(data(typeReference("Array")), sInterfaceReference("OnEnrichedArray")),
             "DecorateDictionaryEntriesWithKey": sfunction(typeReference("KeyValueDictionary"), data(typeReference("Dictionary"))),
         }),
     },
