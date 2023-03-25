@@ -15,8 +15,6 @@ import {
     parametrizedType,
     typeParameter,
     sInterface,
-    tp,
-    parameter,
 
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
@@ -27,24 +25,23 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
     'imports': d({}),
     'types': d({
-        "FIXMEType": parametrizedType({ "Type": null }, typeParameter("Type")),
-        "Array": parametrizedType({ "Type": null }, array(typeParameter("Type"))),
-        "Dictionary": parametrizedType({ "Type": null }, dictionary(typeParameter("Type"))),
-        "KeyValueDictionary": parametrizedType({ "Type": null }, dictionary(ref(typeReference("KeyValuePair", { "Type": tp(typeReference("FIXMEType")) })))),
+        "Array": parametrizedType({ "Type": null }, array(ref(typeParameter("Type")))),
+        "Dictionary": parametrizedType({ "Type": null }, dictionary(ref(typeParameter("Type")))),
+        "KeyValueDictionary": parametrizedType({ "Type": null }, dictionary(ref(typeReference("KeyValuePair", { "Type": typeParameter("Type") })))),
         "KeyValuePair": parametrizedType({ "Type": null }, group({
             "key": member(string()),
-            "value": member(typeParameter("Type")),
+            "value": member(ref(typeParameter("Type"))),
         })),
         "AnnotatedEntry": parametrizedType({ "Type": null }, group({
             "isFirst": member(boolean()),
             "isLast": member(boolean()),
             "key": member(string()),
-            "value": member(typeParameter("Type")),
+            "value": member(ref(typeParameter("Type"))),
         })),
         "AnnotatedElement": parametrizedType({ "Type": null }, group({
             "isFirst": member(boolean()),
             "isLast": member(boolean()),
-            "value": member(typeParameter("Type")),
+            "value": member(ref(typeParameter("Type"))),
         })),
     }),
     'asynchronous': {
@@ -54,27 +51,27 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     },
     'synchronous': {
         'interfaces': d({
-            "OnElement": sInterface(sInterfaceMethod(parameter("Type")), { "Type": null }),
-            "OnEntry": sInterface(sInterfaceMethod(tp(typeReference("KeyValuePair", { "Type": parameter("Type") }))), { "Type": null }),
+            "OnElement": sInterface(sInterfaceMethod(typeParameter("Type")), { "Type": null }),
+            "OnEntry": sInterface(sInterfaceMethod(typeReference("KeyValuePair", { "Type": typeParameter("Type") })), { "Type": null }),
             "OnEnrichedDictionary": sInterface(['group', {
                 'members': d({
                     "onEmpty": sInterfaceMethod(null),
-                    "onNotEmpty": sInterfaceMethod(null, sInterfaceMethod(tp(typeReference("AnnotatedEntry", { "Type": parameter("Type") })))),
+                    "onNotEmpty": sInterfaceMethod(null, sInterfaceMethod(typeReference("AnnotatedEntry", { "Type": typeParameter("Type") }))),
                 }),
             }], { "Type": null }),
             "OnEnrichedArray": sInterface(['group', {
                 'members': d({
                     "onEmpty": sInterfaceMethod(null),
-                    "onNotEmpty": sInterfaceMethod(null, sInterfaceMethod(tp(typeReference("AnnotatedElement", { "Type": parameter("Type") })))),
+                    "onNotEmpty": sInterfaceMethod(null, sInterfaceMethod(typeReference("AnnotatedElement", { "Type": typeParameter("Type") }))),
                 }),
             }], { "Type": null }),
         }),
         'algorithms': d({
-            "ArrayForEach": procedure(data(tp(typeReference("Array", { "Type": parameter("Type") }))), sInterfaceReference("OnElement"), { "Type": null }),
-            "DictionaryForEach": procedure(data(tp(typeReference("Dictionary", { "Type": parameter("Type") }))), sInterfaceReference("OnEntry"), { "Type": null }),
-            "EnrichedDictionaryForEach": procedure(data(tp(typeReference("Dictionary", { "Type": parameter("Type") }))), sInterfaceReference("OnEnrichedDictionary"), { "Type": null }),
-            "EnrichedArrayForEach": procedure(data(tp(typeReference("Array", { "Type": parameter("Type") }))), sInterfaceReference("OnEnrichedArray"), { "Type": null }),
-            "DecorateDictionaryEntriesWithKey": sfunction(tp(typeReference("KeyValueDictionary", { "Type": parameter("Type") })), data(tp(typeReference("Dictionary", { "Type": parameter("Type") }))), { "Type": null }),
+            "ArrayForEach": procedure(data(typeReference("Array", { "Type": typeParameter("Type") })), sInterfaceReference("OnElement"), { "Type": null }),
+            "DictionaryForEach": procedure(data(typeReference("Dictionary", { "Type": typeParameter("Type") })), sInterfaceReference("OnEntry"), { "Type": null }),
+            "EnrichedDictionaryForEach": procedure(data(typeReference("Dictionary", { "Type": typeParameter("Type") })), sInterfaceReference("OnEnrichedDictionary"), { "Type": null }),
+            "EnrichedArrayForEach": procedure(data(typeReference("Array", { "Type": typeParameter("Type") })), sInterfaceReference("OnEnrichedArray"), { "Type": null }),
+            "DecorateDictionaryEntriesWithKey": sfunction(typeReference("KeyValueDictionary", { "Type": typeParameter("Type") }), data(typeReference("Dictionary", { "Type": typeParameter("Type") })), { "Type": null }),
         }),
     },
 }

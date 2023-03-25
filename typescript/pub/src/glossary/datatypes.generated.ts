@@ -50,8 +50,6 @@ export namespace T {
     
     export type Dictionary<TType> = pt.Dictionary<TType>
     
-    export type FIXMEType<TType> = TType
-    
     export namespace KeyValueDictionary {
         
         export type D<TType> = T.KeyValuePair<TType>
