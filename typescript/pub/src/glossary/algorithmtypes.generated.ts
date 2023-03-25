@@ -14,26 +14,26 @@ export namespace SYNC {
     
     export namespace I {
         
-        export type OnElement = <TType>($: TType, ) => void
+        export type OnElement<TType> = ($: TType, ) => void
         
-        export type OnEnrichedArray = {
-            readonly 'onEmpty': <TType>() => void
-            readonly 'onNotEmpty': <TType>($c: ($b: <TType>($: T.AnnotatedElement<TType>, ) => void) => void) => void
+        export type OnEnrichedArray<TType> = {
+            readonly 'onEmpty': () => void
+            readonly 'onNotEmpty': ($c: ($b: ($: T.AnnotatedElement<TType>, ) => void) => void) => void
         }
         
-        export type OnEnrichedDictionary = {
-            readonly 'onEmpty': <TType>() => void
-            readonly 'onNotEmpty': <TType>($c: ($b: <TType>($: T.AnnotatedEntry<TType>, ) => void) => void) => void
+        export type OnEnrichedDictionary<TType> = {
+            readonly 'onEmpty': () => void
+            readonly 'onNotEmpty': ($c: ($b: ($: T.AnnotatedEntry<TType>, ) => void) => void) => void
         }
         
-        export type OnEntry = <TType>($: T.KeyValuePair<TType>, ) => void
+        export type OnEntry<TType> = ($: T.KeyValuePair<TType>, ) => void
     }
     
     export namespace A {
         
         
         export namespace P {
-            export type ArrayForEach = <TType>($: T.Array<TType>, $i: SYNC.I.OnElement) => void
+            export type ArrayForEach = <TType>($: T.Array<TType>, $i: SYNC.I.OnElement<TType>) => void
         }
         
         
@@ -43,17 +43,17 @@ export namespace SYNC {
         
         
         export namespace P {
-            export type DictionaryForEach = <TType>($: T.Dictionary<TType>, $i: SYNC.I.OnEntry) => void
+            export type DictionaryForEach = <TType>($: T.Dictionary<TType>, $i: SYNC.I.OnEntry<TType>) => void
         }
         
         
         export namespace P {
-            export type EnrichedArrayForEach = <TType>($: T.Array<TType>, $i: SYNC.I.OnEnrichedArray) => void
+            export type EnrichedArrayForEach = <TType>($: T.Array<TType>, $i: SYNC.I.OnEnrichedArray<TType>) => void
         }
         
         
         export namespace P {
-            export type EnrichedDictionaryForEach = <TType>($: T.Dictionary<TType>, $i: SYNC.I.OnEnrichedDictionary) => void
+            export type EnrichedDictionaryForEach = <TType>($: T.Dictionary<TType>, $i: SYNC.I.OnEnrichedDictionary<TType>) => void
         }
     }
 }
