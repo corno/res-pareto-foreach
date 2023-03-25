@@ -5,19 +5,19 @@ import * as g_this from "./glossary"
 
 export namespace A {
     
-    export type arrayForEach = <GAnnotation>() => g_this.SYNC.A.P.ArrayForEach<GAnnotation>
+    export type arrayForEach = () => g_this.SYNC.A.P.ArrayForEach
     
-    export type createDictionaryForEach = <GAnnotation>($d: {
+    export type createDictionaryForEach = ($d: {
         readonly 'compare': g_collation.SYNC.A.F.IsABeforeB
-    }, ) => g_this.SYNC.A.P.DictionaryForEach<GAnnotation>
+    }, ) => g_this.SYNC.A.P.DictionaryForEach
     
-    export type createEnrichedDictionaryForEach = <GAnnotation>($d: {
+    export type createEnrichedDictionaryForEach = ($d: {
         readonly 'compare': g_collation.SYNC.A.F.IsABeforeB
-    }, ) => g_this.SYNC.A.P.EnrichedDictionaryForEach<GAnnotation>
+    }, ) => g_this.SYNC.A.P.EnrichedDictionaryForEach
     
-    export type decorateDictionaryEntriesWithKey = <GAnnotation>() => g_this.SYNC.A.F.DecorateDictionaryEntriesWithKey<GAnnotation>
+    export type decorateDictionaryEntriesWithKey = () => g_this.SYNC.A.F.DecorateDictionaryEntriesWithKey
     
-    export type enrichedArrayForEach = <GAnnotation>() => g_this.SYNC.A.P.EnrichedArrayForEach<GAnnotation>
+    export type enrichedArrayForEach = () => g_this.SYNC.A.P.EnrichedArrayForEach
 }
 
 export type API = {

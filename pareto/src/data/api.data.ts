@@ -7,14 +7,14 @@ const d = pd.d
 
 export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
-        "arrayForEach": algorithm(procedure("this", {}, "ArrayForEach"), { "Annotation": "Annnotation" }),
-        "createDictionaryForEach": algorithm(procedure("this", {}, "DictionaryForEach"), { "Annotation": "Annnotation" }, dependent(null, {
+        "arrayForEach": algorithm(procedure("this", {}, "ArrayForEach")),
+        "createDictionaryForEach": algorithm(procedure("this", {}, "DictionaryForEach"), {}, dependent(null, {
             "compare": sfunction("collation", {}, "IsABeforeB"),
         }, {})),
-        "createEnrichedDictionaryForEach": algorithm(procedure("this", {}, "EnrichedDictionaryForEach"), { "Annotation": "Annnotation" }, dependent(null, {
+        "createEnrichedDictionaryForEach": algorithm(procedure("this", {}, "EnrichedDictionaryForEach"), {}, dependent(null, {
             "compare": sfunction("collation", {}, "IsABeforeB"),
         }, {})),
-        "enrichedArrayForEach": algorithm(procedure("this", {}, "EnrichedArrayForEach"), { "Annotation": "Annnotation" }),
-        "decorateDictionaryEntriesWithKey": algorithm(sfunction("this", {}, "DecorateDictionaryEntriesWithKey"), { "Annotation": "Annnotation" }),
+        "enrichedArrayForEach": algorithm(procedure("this", {}, "EnrichedArrayForEach")),
+        "decorateDictionaryEntriesWithKey": algorithm(sfunction("this", {}, "DecorateDictionaryEntriesWithKey")),
     }),
 }

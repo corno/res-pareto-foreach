@@ -5,69 +5,69 @@ export namespace T {
     
     export namespace AnnotatedElement {
         
-        export type isFirst<GType> = boolean
+        export type isFirst<TType> = boolean
         
-        export type isLast<GType> = boolean
+        export type isLast<TType> = boolean
         
-        export type value<GType> = GType
+        export type value<TType> = TType
     }
     
-    export type AnnotatedElement<GType> = {
+    export type AnnotatedElement<TType> = {
         readonly 'isFirst': boolean
         readonly 'isLast': boolean
-        readonly 'value': GType
+        readonly 'value': TType
     }
     
     export namespace AnnotatedEntry {
         
-        export type isFirst<GType> = boolean
+        export type isFirst<TType> = boolean
         
-        export type isLast<GType> = boolean
+        export type isLast<TType> = boolean
         
-        export type key<GType> = string
+        export type key<TType> = string
         
-        export type value<GType> = GType
+        export type value<TType> = TType
     }
     
-    export type AnnotatedEntry<GType> = {
+    export type AnnotatedEntry<TType> = {
         readonly 'isFirst': boolean
         readonly 'isLast': boolean
         readonly 'key': string
-        readonly 'value': GType
+        readonly 'value': TType
     }
     
     export namespace Array {
         
-        export type A<GType> = GType
+        export type A<TType> = TType
     }
     
-    export type Array<GType> = pt.Array<GType>
+    export type Array<TType> = pt.Array<TType>
     
     export namespace Dictionary {
         
-        export type D<GType> = GType
+        export type D<TType> = TType
     }
     
-    export type Dictionary<GType> = pt.Dictionary<GType>
+    export type Dictionary<TType> = pt.Dictionary<TType>
+    
+    export type FIXMEType<TType> = TType
     
     export namespace KeyValueDictionary {
         
-        export type D<GType> = T.KeyValuePair<GType>
+        export type D<TType> = T.KeyValuePair<TType>
     }
     
-    export type KeyValueDictionary<GType> = pt.Dictionary<T.KeyValuePair<GType>>
+    export type KeyValueDictionary<TType> = pt.Dictionary<T.KeyValuePair<TType>>
     
     export namespace KeyValuePair {
         
-        export type key<GType> = string
+        export type key<TType> = string
         
-        export type value<GType> = GType
+        export type value<TType> = TType
     }
     
-    export type KeyValuePair<GType> = {
+    export type KeyValuePair<TType> = {
         readonly 'key': string
-        readonly 'value': GType
+        readonly 'value': TType
     }
-    
-    export type Value<GType> = GType
 }
