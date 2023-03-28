@@ -24,26 +24,29 @@ const d = pd.d
 export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
     'imports': d({}),
-    'types': d({
-        "Array": parametrizedType({ "Type": null }, array(ref(typeParameter("Type")))),
-        "Dictionary": parametrizedType({ "Type": null }, dictionary(ref(typeParameter("Type")))),
-        "KeyValueDictionary": parametrizedType({ "Type": null }, dictionary(ref(typeReference("KeyValuePair", { "Type": typeParameter("Type") })))),
-        "KeyValuePair": parametrizedType({ "Type": null }, group({
-            "key": member(string()),
-            "value": member(ref(typeParameter("Type"))),
-        })),
-        "AnnotatedEntry": parametrizedType({ "Type": null }, group({
-            "isFirst": member(boolean()),
-            "isLast": member(boolean()),
-            "key": member(string()),
-            "value": member(ref(typeParameter("Type"))),
-        })),
-        "AnnotatedElement": parametrizedType({ "Type": null }, group({
-            "isFirst": member(boolean()),
-            "isLast": member(boolean()),
-            "value": member(ref(typeParameter("Type"))),
-        })),
-    }),
+    'root': {
+        'namespaces': d({}),
+        'types': d({
+            "Array": parametrizedType({ "Type": null }, array(ref(typeParameter("Type")))),
+            "Dictionary": parametrizedType({ "Type": null }, dictionary(ref(typeParameter("Type")))),
+            "KeyValueDictionary": parametrizedType({ "Type": null }, dictionary(ref(typeReference("KeyValuePair", { "Type": typeParameter("Type") })))),
+            "KeyValuePair": parametrizedType({ "Type": null }, group({
+                "key": member(string()),
+                "value": member(ref(typeParameter("Type"))),
+            })),
+            "AnnotatedEntry": parametrizedType({ "Type": null }, group({
+                "isFirst": member(boolean()),
+                "isLast": member(boolean()),
+                "key": member(string()),
+                "value": member(ref(typeParameter("Type"))),
+            })),
+            "AnnotatedElement": parametrizedType({ "Type": null }, group({
+                "isFirst": member(boolean()),
+                "isLast": member(boolean()),
+                "value": member(ref(typeParameter("Type"))),
+            })),
+        }),
+    },
     'asynchronous': {
         'interfaces': d({}),
         'algorithms': d({}),
