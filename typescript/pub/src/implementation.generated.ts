@@ -5,7 +5,7 @@ import { $$ as icreateEnrichedDictionaryForEach } from "./implementations/create
 import { $$ as idecorateDictionaryEntriesWithKey } from "./implementations/decorateDictionaryEntriesWithKey.native"
 import { $$ as ienrichedArrayForEach } from "./implementations/enrichedArrayForEach.native"
 
-export const $r: API = {
+export const $api: API = {
     'arrayForEach': iarrayForEach,
     'createDictionaryForEach': icreateDictionaryForEach,
     'createEnrichedDictionaryForEach': icreateEnrichedDictionaryForEach,
