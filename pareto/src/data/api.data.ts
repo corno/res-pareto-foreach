@@ -8,10 +8,10 @@ const d = pd.d
 export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
         "arrayForEach": algorithm(procedure("this", {}, "ArrayForEach")),
-        "createDictionaryForEach": algorithm(procedure("this", {}, "DictionaryForEach"), {}, dependent(null, {
+        "dictionaryForEach": algorithm(procedure("this", {}, "DictionaryForEach"), {}, dependent(null, {
             "compare": sfunction("collation", {}, "IsABeforeB"),
         }, {})),
-        "createEnrichedDictionaryForEach": algorithm(procedure("this", {}, "EnrichedDictionaryForEach"), {}, dependent(null, {
+        "enrichedDictionaryForEach": algorithm(procedure("this", {}, "EnrichedDictionaryForEach"), {}, dependent(null, {
             "compare": sfunction("collation", {}, "IsABeforeB"),
         }, {})),
         "enrichedArrayForEach": algorithm(procedure("this", {}, "EnrichedArrayForEach")),

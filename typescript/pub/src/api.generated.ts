@@ -6,34 +6,34 @@ import * as g_this from "./glossary"
 export namespace D {
     
     
-    export type createDictionaryForEach = {
+    
+    export type dictionaryForEach = {
         readonly 'compare': g_collation.SYNC.A.F.IsABeforeB
     }
     
-    export type createEnrichedDictionaryForEach = {
+    
+    export type enrichedDictionaryForEach = {
         readonly 'compare': g_collation.SYNC.A.F.IsABeforeB
     }
-    
-    
 }
 
 export namespace A {
     
     export type arrayForEach = () => g_this.SYNC.A.P.ArrayForEach
     
-    export type createDictionaryForEach = ($d: D.createDictionaryForEach, ) => g_this.SYNC.A.P.DictionaryForEach
-    
-    export type createEnrichedDictionaryForEach = ($d: D.createEnrichedDictionaryForEach, ) => g_this.SYNC.A.P.EnrichedDictionaryForEach
-    
     export type decorateDictionaryEntriesWithKey = () => g_this.SYNC.A.F.DecorateDictionaryEntriesWithKey
     
+    export type dictionaryForEach = ($d: D.dictionaryForEach, ) => g_this.SYNC.A.P.DictionaryForEach
+    
     export type enrichedArrayForEach = () => g_this.SYNC.A.P.EnrichedArrayForEach
+    
+    export type enrichedDictionaryForEach = ($d: D.enrichedDictionaryForEach, ) => g_this.SYNC.A.P.EnrichedDictionaryForEach
 }
 
 export type API = {
     readonly 'arrayForEach': A.arrayForEach
-    readonly 'createDictionaryForEach': A.createDictionaryForEach
-    readonly 'createEnrichedDictionaryForEach': A.createEnrichedDictionaryForEach
     readonly 'decorateDictionaryEntriesWithKey': A.decorateDictionaryEntriesWithKey
+    readonly 'dictionaryForEach': A.dictionaryForEach
     readonly 'enrichedArrayForEach': A.enrichedArrayForEach
+    readonly 'enrichedDictionaryForEach': A.enrichedDictionaryForEach
 }
